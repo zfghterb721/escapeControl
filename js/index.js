@@ -21,6 +21,7 @@ $(document).ready(function(){
 	$("#no25").click(function(){$.get('http://192.168.1.30:1880/state?toggle=barrelsmoke', function(data, status){update(data)});});
 	$("#no26").click(function(){$.get('http://192.168.1.30:1880/state?toggle=bombstart', function(data, status){update(data)});});
 	$("#no27").click(function(){$.get('http://192.168.1.30:1880/state?toggle=ceilingsmoke', function(data, status){update(data)});});
+	$("#no28").click(function(){$.get('http://192.168.1.30:1880/unarmAlarm', function(data, status){});});
 	$( "#hint" ).submit(function( event ) {
 		console.log($( "input:first" ).val());
 		$.get('http://192.168.1.31:1880/msg?message='+$( "input:first" ).val(), function(data, status){})
