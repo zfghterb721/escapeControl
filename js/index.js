@@ -22,6 +22,10 @@ $(document).ready(function(){
 	$("#no26").click(function(){$.get('http://192.168.1.30:1880/state?toggle=bombstart', function(data, status){update(data)});});
 	$("#no27").click(function(){$.get('http://192.168.1.30:1880/state?toggle=ceilingsmoke', function(data, status){update(data)});});
 	$("#no28").click(function(){$.get('http://192.168.1.30:1880/unarmAlarm', function(data, status){});});
+	$("#no29").click(function(){$.get('http://192.168.1.30:1880/callPhone', function(data, status){update(data)});});
+	$("#no30").click(function(){$.get('http://192.168.1.30:1880/answerCall', function(data, status){update(data)});});
+	$("#no31").click(function(){$.get('http://192.168.1.34:1880/screenon', function(data, status){update(data)});});
+	
 	$( "#hint" ).submit(function( event ) {
 		console.log($( "input:first" ).val());
 		$.get('http://192.168.1.31:1880/msg?message='+$( "input:first" ).val(), function(data, status){})
@@ -95,7 +99,7 @@ function update(data) {
 		//read state only
 		if(data.bombp==0){
 			$("#no28").css('background','rgb(0,255,0)'),
-			$("#no28").children().html("Bomb Defused")
+			$("#no28").children().html("Bomb Active")
 		}
 		else{$("#no28").css('background','rgb(255,0,0)'),
 			$("#no28").children().html("Bomb Inactive")
@@ -254,5 +258,26 @@ function update(data) {
 		}
 		else{$("#no27").css('background','rgb(255,0,0)'),
 			$("#no27").children().html("Ceiling Smoke Off")
+		}
+		if(data.callPhone==1){
+			$("#no29").css('background','rgb(255,255,255)'),
+			$("#no29").children().html("Calling Phone....")
+		}
+		else{$("#no29").css('background','rgb(144,144,144)'),
+			$("#no29").children().html("Call Phone")
+		}
+		if(data.phoneDialed==1){
+			$("#no30").css('background','rgb(144,144,144)'),
+			$("#no30").children().html("...")
+		}
+		else{$("#no30").css('background','rgb(144,144,144)'),
+			$("#no30").children().html("Call Mom")
+		}
+		if(data.keypad==1){
+			$("#no31").css('background','rgb(0,255,0)'),
+			$("#no31").children().html("...")
+		}
+		else{$("#no31").css('background','rgb(144,144,144)'),
+			$("#no31").children().html("Turn Keypad On")
 		}
 }
