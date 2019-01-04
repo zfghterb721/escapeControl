@@ -26,7 +26,7 @@ $(document).ready(function(){
 	$("#no30").click(function(){$.get('http://192.168.1.30:1880/answerCall', function(data, status){update(data)});});
 	$("#no31").click(function(){$.get('http://192.168.1.34:1880/screenon', function(data, status){update(data)});});
 	$("#no32").click(function(){$.get('http://192.168.1.30:1880/pi2', function(data, status){update(data)});});
-	$("#no33").click(function(){$.get('http://192.168.1.30:1880/unarmAlarm', function(data, status){update(data)});});
+	$("#no33").click(function(){$.get('http://192.168.1.30:1880/solveEye', function(data, status){update(data)});});
 	$("#no34").click(function(){$.get('http://192.168.1.32:1880/screenon', function(data, status){update(data)});});
 	
 	
@@ -291,6 +291,6 @@ function update(data) {
 		$("#no32").children().html("Disarm Laser")
 		
 		$("#no33").css('background','rgb(144,144,144)')
-		$("#no33").children().html("Disarm Siren")
+		$("#no33").children().html("Solve Retina")
 		
 }
