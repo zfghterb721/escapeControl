@@ -25,6 +25,10 @@ $(document).ready(function(){
 	$("#no29").click(function(){$.get('http://192.168.1.30:1880/callPhone', function(data, status){update(data)});});
 	$("#no30").click(function(){$.get('http://192.168.1.30:1880/answerCall', function(data, status){update(data)});});
 	$("#no31").click(function(){$.get('http://192.168.1.34:1880/screenon', function(data, status){update(data)});});
+	$("#no32").click(function(){$.get('http://192.168.1.30:1880/pi2', function(data, status){update(data)});});
+	$("#no33").click(function(){$.get('http://192.168.1.30:1880/unarmAlarm', function(data, status){update(data)});});
+	$("#no34").click(function(){$.get('http://192.168.1.32:1880/screenon', function(data, status){update(data)});});
+	
 	
 	$( "#hint" ).submit(function( event ) {
 		console.log($( "input:first" ).val());
@@ -280,4 +284,13 @@ function update(data) {
 		else{$("#no31").css('background','rgb(144,144,144)'),
 			$("#no31").children().html("Turn Keypad On")
 		}
+		$("#no34").css('background','rgb(144,144,144)')
+		$("#no34").children().html("Computer 2 On")
+		
+		$("#no32").css('background','rgb(144,144,144)')
+		$("#no32").children().html("Disarm Laser")
+		
+		$("#no33").css('background','rgb(144,144,144)')
+		$("#no33").children().html("Disarm Siren")
+		
 }

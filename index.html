@@ -44,7 +44,10 @@
 	<a id="currentstatus" class="nav-link"><font>Status</font></a>
 	</li>
           <li class="nav-item active">
-            <a class="nav-link" href="#" onclick="$.get('http://192.168.1.30:1880/unarmAlarm', function(data, status){});">Disarm Alarm</a>
+            <a class="nav-link" href="#" onclick="$.get('http://192.168.1.30:1880/unarmAlarm', function(data, status){});">Disarm Siren</a>
+          </li>
+		  <li class="nav-item active">
+            <a class="nav-link" href="#" onclick="$.get('http://192.168.1.30:1880/pi2', function(data, status){});">Disarm Laser</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#" onclick="$.get('http://192.168.1.31:1880/soduko', function(data, status){});">Play Sudoku</a>
@@ -91,8 +94,8 @@
 <div id="no5"><div id="no1-1"> Loading</div></div>
 </div>
 </div>
-	<div class="col-sm-10">
-	   <iframe src="" height="500" width="90%" seamless="seamless"></iframe>
+	<div class="col-sm-10" style="height: 95vh">
+		<embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"  width="100%"  height="100%" id="vlc" loop="yes" autoplay="yes" target="rtsp://admin:Research1@192.168.1.105/cam/realmonitor?channel=1&subtype=0"></embed>
 	   </div>
 
 
@@ -179,6 +182,8 @@
 					<div id="no17"><div id="no1-1"> Loading</div></div>
 					<div id="line2"></div>
 					<div id="no29"><div id="no1-1"> Loading</div></div>
+					<div id="line2"></div>
+					<div id="no34"><div id="no1-1"> Loading</div></div>
 
 
 
@@ -200,6 +205,8 @@
 					<div id="no22"><div id="no1-1"> Loading</div></div>
 					<div id="line2"></div>
 					<div id="no30"><div id="no1-1"> Loading</div></div>
+					<div id="line2"></div>
+					<div id="no33"><div id="no1-1"> Loading</div></div>
 
 
 
@@ -222,6 +229,8 @@
 					<div id="no27"><div id="no1-1"> Loading</div></div>
 					<div id="line2"></div>
 					<div id="no31"><div id="no1-1"> Loading</div></div>
+					<div id="line2"></div>
+					<div id="no32"><div id="no1-1"> Loading</div></div>
 
 
 
