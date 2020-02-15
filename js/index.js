@@ -25,10 +25,13 @@ $(document).ready(function(){
 	$("#no29").click(function(){$.get('http://192.168.1.30:1880/callPhone', function(data, status){update(data)});});
 	$("#no30").click(function(){$.get('http://192.168.1.30:1880/answerCall', function(data, status){update(data)});});
 	$("#no31").click(function(){$.get('http://192.168.1.34:1880/screenon', function(data, status){update(data)});});
-	$("#no32").click(function(){$.get('http://192.168.1.30:1880/pi2', function(data, status){update(data)});});
+	$("#no32").click(function(){fetch('http://192.168.1.30:1880/c2pass', {
+		method: 'post',
+		body: JSON.stringify({password: "10110101"})
+	  })})
+	//$("#no32").click(function(){$.post('http://192.168.1.30:1880/c2pass', {password: "10110101"}, function(data, status){update(data)}, "json");});
 	$("#no33").click(function(){$.get('http://192.168.1.30:1880/solveEye', function(data, status){update(data)});});
 	$("#no34").click(function(){$.get('http://192.168.1.32:1880/screenon', function(data, status){update(data)});});
-	
 	
 	$( "#hint" ).submit(function( event ) {
 		console.log($( "input:first" ).val());
